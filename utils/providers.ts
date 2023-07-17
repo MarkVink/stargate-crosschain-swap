@@ -37,6 +37,16 @@ export const BlockchainToRouterAddress = {
     [StargateBlockchainType.Fantom]: '0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6',
 }
 
+export const StargateTokenAddress = {
+    [StargateBlockchainType.Ethereum]: '0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6',
+    [StargateBlockchainType.BnbChain]: '0xB0D502E938ed5f4df2E681fE6E419ff29631d62b',
+    [StargateBlockchainType.Avalanche]: '0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590',
+    [StargateBlockchainType.Polygon]: '0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590',
+    [StargateBlockchainType.Arbitrum]: '0x6694340fc020c5E6B96567843da2df01b2CE1eb6',
+    [StargateBlockchainType.Optimism]: '0x296F55F8Fb28E498B858d0BcDA06D955B2Cb3f97',
+    [StargateBlockchainType.Fantom]: '0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590',
+}
+
 /**
  * URLs for RPC providers for every network
  */

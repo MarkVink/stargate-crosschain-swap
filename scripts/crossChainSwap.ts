@@ -76,7 +76,7 @@ async function main() {
         BlockchainToChainId[toNetwork],
         TYPE_SWAP_REMOTE,
         signer.address,
-        "0x",
+        "0x", // no payload
         ({
             dstGasForCall: 0,
             dstNativeAmount: 0,
@@ -96,7 +96,7 @@ async function main() {
         amountOutMin,
         {dstGasForCall: 0, dstNativeAmount: 0, dstNativeAddr: "0x"},
         signer.address,
-        "0x",
+        "0x", // no payload
         {
             value: feeWei,
             gasLimit: 600000,
