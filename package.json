@@ -10,6 +10,7 @@
   },
   "scripts": {
     "generate-typechain": "typechain --target ethers-v5 --out-dir typechain '**/*.abi.json'",
+    "generate-wallet": "npx ts-node ./scripts/createWallet.ts",
     "swap-usdc-from-ftm-to-polygon": "npx ts-node ./scripts/crossChainSwap.ts --fromNetwork=Fantom --toNetwork=Polygon --token=USDC --amount=5"
   },
   "devDependencies": {
