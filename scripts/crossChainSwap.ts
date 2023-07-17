@@ -1,18 +1,23 @@
 import dotenv from 'dotenv'
 import {ethers} from 'ethers'
 import {
-    initAll,
-    StargateBlockchainType,
-    BlockchainToRouterAddress,
     BlockchainToChainId,
-    BlockchainToScannerUrl
+    BlockchainToRouterAddress,
+    BlockchainToScannerUrl,
+    initAll,
+    StargateBlockchainType
 } from '../utils/providers'
-import {TokenType, BlockchainToToken} from '../utils/tokens'
-import {StargateRouterAbi__factory, ERC20Abi__factory} from "../typechain";
+import {BlockchainToToken, TokenType} from '../utils/tokens'
+import {ERC20Abi__factory, StargateRouterAbi__factory} from "../typechain";
 
 dotenv.config();
 
 const argv = require('minimist')(process.argv.slice(2));
+
+const TYPE_SWAP_REMOTE = 1;
+const TYPE_ADD_LIQUIDITY = 2;
+const TYPE_REDEEM_LOCAL_CALL_BACK = 3;
+const TYPE_WITHDRAW_REMOTE = 4;
 
 async function main() {
     const fromNetwork = StargateBlockchainType[argv.fromNetwork as keyof typeof StargateBlockchainType];
@@ -69,7 +74,7 @@ async function main() {
 
     const quoteData = await router.quoteLayerZeroFee(
         BlockchainToChainId[toNetwork],
-        1,
+        TYPE_SWAP_REMOTE,
         signer.address,
         "0x",
         ({
